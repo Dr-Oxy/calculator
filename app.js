@@ -12,7 +12,14 @@ let outputDisplay = document.querySelector(".output");
 //appending numbers to display screen
 numbers.forEach((number) => {
   number.addEventListener("click", function () {
-    inputDisplay.textContent = inputDisplay.textContent + number.dataset.digit;
+    const text = inputDisplay.textContent;
+    if (text.length == 1 && text == "0" && number.dataset.digit != ".") {
+      inputDisplay.textContent = "";
+    }
+
+    if (text[text.length - 1] == "." && number.dataset.digit == ".") return;
+
+    inputDisplay.textContent += number.dataset.digit;
   });
 });
 
