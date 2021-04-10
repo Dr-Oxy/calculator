@@ -1,5 +1,10 @@
+//Selecting elements
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
+
+const allClear = document.querySelector(".clear");
+const equalTo = document.querySelector(".equals");
+const del = document.querySelector(".delete");
 
 let inputDisplay = document.querySelector(".input");
 let outputDisplay = document.querySelector(".output");
@@ -7,28 +12,38 @@ let outputDisplay = document.querySelector(".output");
 //appending numbers to display screen
 numbers.forEach((number) => {
   number.addEventListener("click", function () {
-    inputDisplay.textContent = inputDisplay.textContent + number.innerText;
+    inputDisplay.textContent = inputDisplay.textContent + number.dataset.digit;
   });
 });
 
+//appending operators to display screen
 operators.forEach((operator) => {
   operator.addEventListener("click", function () {
-    inputDisplay.textContent = inputDisplay.textContent + operator.innerText;
+    inputDisplay.textContent =
+      inputDisplay.textContent + operator.dataset.operator;
   });
 });
 
-//All clear function and event
-document.querySelector(".clear").addEventListener("click", function () {
+//All clear functionality
+function clearAll() {
   inputDisplay.textContent = "0";
   outputDisplay.textContent = "0";
-});
+}
 
-// //evaluating exp
-document.querySelector(".equals").addEventListener("click", () => {
+allClear.addEventListener("click", clearAll);
+
+//Equals to functionality
+function calculate() {
   outputDisplay.textContent = eval(inputDisplay.textContent);
-});
+}
 
-//delete prev number[o]
-document.querySelector(".delete").addEventListener("click", function () {
+equalTo.addEventListener("click", calculate);
+
+//Delete functionality
+function deleteNum() {
   inputDisplay.textContent = inputDisplay.textContent.slice(0, -1);
-});
+}
+
+del.addEventListener("click", deleteNum);
+inputDisplay.textContent = inputDisplay.textContent.slice(0, -1);
+
