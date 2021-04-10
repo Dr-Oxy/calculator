@@ -1,0 +1,82 @@
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #c08311, #ce481f);
+}
+
+.cal {
+  height: 90vh;
+  max-width: 500px;
+  margin: 10px auto;
+  background: rgba(255, 255, 255, 0.822);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  border-radius: 2rem;
+  backdrop-filter: blur(20rem);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 120px repeat(5, 1fr);
+}
+
+.cal-display {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  grid-column: 1/-1;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input {
+  font-size: 24px;
+  color: #ffca68;
+}
+
+.output {
+  font-size: 30px;
+  justify-self: flex-end;
+}
+
+.clear,
+.equals {
+  grid-column: span 2;
+}
+
+.equals {
+  border-radius: 0 0 22px 0;
+}
+
+.dot {
+  border-radius: 0 0 0 22px;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.479);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  font-size: 30px;
+}
