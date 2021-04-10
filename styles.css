@@ -14,30 +14,6 @@ html {
 
 body {
   background: linear-gradient(to right, #c08311, #ce481f);
-}
-
-.cal {
-  height: 90vh;
-  max-width: 500px;
-  margin: 10px auto;
-  background: rgba(255, 255, 255, 0.822);
-  background: linear-gradient(
-html {
-  font-size: 16px;
-  box-sizing: border-box;
-  line-height: 1.4;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: linear-gradient(to right, #c08311, #ce481f);
   background: #ecf0f3;
 }
 
